@@ -1,0 +1,44 @@
+# Which network this config targets (free-form label)
+network: "Arbitrum_Sepolia"
+
+server:
+  bind_addr: "0.0.0.0"
+  port: 5588
+  request_timeout_ms: 2000
+
+relay:
+  latency_threshold_ms: 50
+  max_provider_tries: 3
+  upstream_timeout_ms: 3000
+  broadcast_methods: ["eth_sendRawTransaction"]
+  broadcast_redundancy: 1
+  ban_error_threshold: 25
+  ban_seconds: 5
+
+# Per-method TTL in milliseconds (cache duration)
+cache_ttl:
+  eth_getLogs:     50
+  eth_call:        50
+  eth_blockNumber: 50
+  eth_gasPrice:    1000
+  net_version:     5000
+  eth_chainId:     60000
+
+health_monitor:
+  max_blocks_behind: 6
+  monitor_interval_s: 5
+
+rpc_endpoints:
+  primary:
+    - url: "https://arbitrum-sepolia-rpc.publicnode.com"
+      max_tps: 20
+      weight: 1
+    - url: "https://sepolia-arb-rpc.agnc.my.id"
+      max_tps: 100
+      weight: 1
+    - url: "https://arb-sepolia.cryptonode.id"
+      max_tps: 100
+      weight: 1
+    - url: "https://arb-sep.scerb.uk"
+      max_tps: 100
+      weight: 1
