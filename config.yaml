@@ -11,7 +11,7 @@ relay:
   max_provider_tries: 3
   upstream_timeout_ms: 3000
   broadcast_methods: ["eth_sendRawTransaction"]
-  broadcast_redundancy: 1
+  broadcast_redundancy: 2
   ban_error_threshold: 15
   ban_seconds: 5
 
