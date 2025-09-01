@@ -4,7 +4,7 @@ network: "Arbitrum_Sepolia"
 server:
   bind_addr: "0.0.0.0"
   port: 5000
-  request_timeout_ms: 2000
+  request_timeout_ms: 3000
 
 relay:
   latency_threshold_ms: 50
@@ -12,7 +12,7 @@ relay:
   upstream_timeout_ms: 3000
   broadcast_methods: ["eth_sendRawTransaction"]
   broadcast_redundancy: 1
-  ban_error_threshold: 25
+  ban_error_threshold: 15
   ban_seconds: 5
 
 # Per-method TTL in milliseconds (cache duration)
