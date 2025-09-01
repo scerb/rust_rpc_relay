@@ -3,7 +3,7 @@ network: "Arbitrum_Sepolia"
 
 server:
   bind_addr: "0.0.0.0"
-  port: 5588
+  port: 5000
   request_timeout_ms: 2000
 
 relay:
@@ -41,4 +41,19 @@ rpc_endpoints:
       weight: 1
     - url: "https://arb-sep.scerb.uk"
       max_tps: 100
+      weight: 1
+    - url : "https://sepolia-rollup.arbitrum.io/rpc"
+      max_tps: 30
+      weight: 1
+    - url : "https://arbitrum-sepolia.rpc.thirdweb.com"
+      max_tps: 5
+      weight: 1
+    - url : "https://arbitrums.lava.build/"
+      max_tps: 3
+      weight: 1
+    - url : "https://arbitrum-sepolia.gateway.tenderly.co"
+      max_tps: 3
+      weight: 1
+    - url : "https://testnet-rpc.etherspot.io/v1/421614"
+      max_tps: 3
       weight: 1
